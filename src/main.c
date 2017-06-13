@@ -1,7 +1,18 @@
 #include <Arduino.h>
 #include <Library.hpp>
 
-int main (int argc, char const *argv[]) {
+Library::arduinoPin ledPin = 13;
+Library::Led myLed (ledPin);
 
-    return 0;
+// int pin = 13;
+// bool state = false;
+
+void setup () {
+    pinMode (ledPin, OUTPUT);
+    Serial.begin (9600);
+}
+
+void loop () {
+
+    delay (100);
 }
