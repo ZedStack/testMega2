@@ -2,20 +2,19 @@
 #define _LIBRARY_HPP_
 
 // C data types
-#include <cstdint>
+#include <stdint.h>
 
 namespace Library {
     // General arduino pin data type
-    typedef uint8_t arduinoPin;
+    typedef unsigned short arduinoPin;
 
     // General LED class
     class Led {
-        private: {
+        private:
             arduinoPin _pin;
             bool       _state;
-        }
 
-        public: {
+        public:
             explicit Led          ();
             explicit Led (arduinoPin pin);
             virtual ~Led ();
@@ -26,7 +25,6 @@ namespace Library {
             void turnOff ();
             void toggle  ();
             void update  ();
-        }
     };
 } /* Library */
 
