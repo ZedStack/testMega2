@@ -1,6 +1,7 @@
 #ifndef _LIBRARY_HPP_
 #define _LIBRARY_HPP_
 
+// C data types
 #include <cstdint>
 
 namespace Library {
@@ -11,17 +12,20 @@ namespace Library {
     class Led {
         private: {
             arduinoPin _pin;
-            bool _state;
+            bool       _state;
         }
 
         public: {
-            Led ();
+            explicit Led          ();
+            explicit Led (arduinoPin pin);
             virtual ~Led ();
 
-            void turnOn ();
+            void setup   (arduinoPin pin);
+
+            void turnOn  ();
             void turnOff ();
-            void toggle ();
-            void update ();
+            void toggle  ();
+            void update  ();
         }
     };
 } /* Library */
